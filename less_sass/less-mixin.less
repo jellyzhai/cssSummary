@@ -1,0 +1,28 @@
+@bgColor: green;
+@fontSize: 10px;
+
+.show(@bgColor,@fontSize){
+  display: block;
+  font-size: @fontSize+10px;
+  background: lighten(@bgColor, 50%);
+}
+
+.container {
+  color: pink;
+  .mask {
+    .show(@bgColor,@fontSize);
+  }
+}
+
+.nav {
+  .show(@bgColor,@fontSize);
+  border: 2px solid;
+}
+
+.box {
+  color: #000;
+}
+
+.box2 {
+  .box()
+}

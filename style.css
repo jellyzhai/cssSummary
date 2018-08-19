@@ -1,0 +1,11 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+ul {
+    list-style: none;
+}
+header {
+    background: linear-gradient(to bottom,#3a2cac,#631d9f);
+    height: 280px;
+}

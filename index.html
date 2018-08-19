@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>css样式集合</title>
+    <style>
+        /* 用边框实现三角形 */
+        .triangle {
+            border-left: 20px solid transparent;
+            border-bottom: 20px solid green;
+            border-right: 20px solid transparent;
+            width: 0;
+            /*border-radius: 50%;*/ /* 加上这个样式就是山形 */
+        }
+
+        /* 单行 超出文本省略 */
+        .ellipsis {
+            width: 150px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+
+        }
+
+        /* 多行 超出文本省略 */
+        .lins-ellipsis {
+            /* https://github.com/josephschmitt/Clamp.js */
+        }
+
+        .container {
+            /* 清除浮动 1：直接让浮动元素的父元素高度 超过浮动元素 */
+            /*height: 10rem;*/
+            background: orange;
+            /* 清除浮动 2： */
+            overflow: hidden;
+        }
+        .container::after {
+            /* 清除浮动 3：设置容器元素的 ::after 伪元素 */
+            /*content: '';
+            display: block;
+            clear: both;*/
+        }
+        .container .left {
+            float: left;
+            background: blueviolet;
+            height: 5rem;
+        }
+        .container .right {
+            float: right;
+            background: pink;
+            height: 5rem;
+        }
+        .sibling {
+            background: brown;
+        }
+    </style>
+    <link rel="stylesheet" href="./less_sass/less-est-frame.css"/>
+</head>
+<body>
+1
+    <div class="triangle"></div>
+
+    <div class="ellipsis">超出文本省略超出文本省略超出文本省略超出文本省略</div>
+
+    <div class="lins-ellipsis">超出文本省略超出文本省略超出文本省略超出文本省略超出文本省略超出文本省略</div>
+
+    <div class="container">
+        <div class="left">left</div>
+        <div class="right">right</div>
+    </div>
+    <span >span</span>
+    <div class="sibling">sibling</div>
+
+    <hr>
+     下面是 使用百度的 基于 less 的 css预处理器框架
+    <hr/>
+    <div class="box">.box box1</div>
+    <div class="box">.box box2</div>
+    <div class="left">.lfet</div>
+    <div class="row">
+        <div class="col">co1</div>
+        <div class="col">co2</div>
+        <div class="col">co3</div>
+        <div class="col">co4</div>
+    </div>
+    <div class="my-triangle"></div>
+</body>
+</html>

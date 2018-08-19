@@ -1,0 +1,11 @@
+.container {
+  background: pink;
+}
+.container .left {
+  font-size: 20px;
+}
+.container .left span {
+  font-weight: bold;
+  color: #000;
+}
+/*# sourceMappingURL=less-nest.css.map */

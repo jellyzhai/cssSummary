@@ -1,0 +1,14 @@
+$bgColor: red;
+$fontSize: 12px;
+
+.container {
+  background: lighten($bgColor, 40);
+  .left {
+    font-size: $fontSize+2px;
+    span {
+      font-size: $fontSize;
+      font-weight: bold;
+      color: $bgColor;
+    }
+  }
+}

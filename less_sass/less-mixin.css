@@ -1,0 +1,21 @@
+.container {
+  color: pink;
+}
+.container .mask {
+  display: block;
+  font-size: 20px;
+  background: #80ff80;
+}
+.nav {
+  display: block;
+  font-size: 20px;
+  background: #80ff80;
+  border: 2px solid;
+}
+.box {
+  color: #000;
+}
+.box2 {
+  color: #000;
+}
+/*# sourceMappingURL=less-mixin.css.map */

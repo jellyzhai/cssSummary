@@ -1,0 +1,21 @@
+$bgColor: green;
+$fontSize: 10px;
+
+@mixin show($bgColor,$fontSize){
+  display: block;
+  font-size: $fontSize+10px;
+  background: lighten($bgColor, 50%);
+}
+
+.container {
+  color: pink;
+  .mask {
+    @include show($bgColor,$fontSize);
+  }
+}
+
+.nav {
+  @include show($bgColor,$fontSize);
+  border: 2px solid;
+}
+

@@ -1,0 +1,15 @@
+{
+  "name": "css",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "browser-sync": "browser-sync start --server --files='**/*'"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "browser-sync": "^2.24.6",
+    "less": "^3.8.1",
+    "node-sass": "^4.9.3"
+  }
+}

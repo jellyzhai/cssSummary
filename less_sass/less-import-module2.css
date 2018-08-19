@@ -1,0 +1,12 @@
+.module1 .container {
+  width: 100px;
+  height: 100px;
+}
+.module1 .container .left {
+  float: left;
+  box-sizing: border-box;
+}
+.module1 .footer {
+  background: darkgray;
+}
+/*# sourceMappingURL=less-import-module2.css.map */

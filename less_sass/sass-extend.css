@@ -1,0 +1,17 @@
+.public, .backTop, .btn {
+  display: inline-block;
+  width: 10rem;
+  height: 10rem;
+  border: 1pc solid pink;
+}
+
+.backTop {
+  font-size: 1.2rem;
+  background: black;
+  color: aliceblue;
+}
+
+.btn {
+  border-radius: 2rem;
+  font-size: 1.2rem;
+}

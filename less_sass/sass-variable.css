@@ -1,0 +1,13 @@
+.container {
+  background: #ffcccc;
+}
+
+.container .left {
+  font-size: 14px;
+}
+
+.container .left span {
+  font-size: 12px;
+  font-weight: bold;
+  color: red;
+}
