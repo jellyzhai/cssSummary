@@ -6,28 +6,136 @@
     <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
-    <header >
-        <nav>
-            <div class="user">
-                <a href="#" id="login">登陆</a>
+<header><nav>
+    <div class='user'>
+        <a href='#' id='login'>登陆</a>
+    </div>
+    <ul>
+        <li><a href='#'>Css基础知识</a></li>
+        <li><a href='#'>Css基础知识</a></li>
+        <li><a href='#'>Css基础知识</a></li>
+    </ul>
+</nav>
+    <div class='headerMain'>
+        <ul class='introduction'>
+            <li>-2017年末新课</li>
+            <li>-2017年末新课</li>
+            <li>-2017年末新课</li>
+        </ul>
+        <h1>全面深入讲解CSS</h1>
+    </div>
+</header><section class='banner'>
+    <ul>
+        <li>
+            <div class='featrue feature1'>
             </div>
+            <p>
+                特点1
+            </p>
+        </li>
+        <li>
+            <div class='featrue feature2'>
+            </div>
+            <p>
+                特点2
+            </p>
+        </li>
+        <li>
+            <div class='featrue feature3'>
+            </div>
+            <p>
+                特点3
+            </p>
+        </li>
+    </ul>
+</section><section class='main'>
+    <div class='block block1'>
+        <img src='https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1534932964458&di=bb71ac6c8eb69d95d21d816432c965d4&imgtype=0&src=http%3A%2F%2Fimgsrc.baidu.com%2Fimgad%2Fpic%2Fitem%2Ff11f3a292df5e0fe41540928576034a85edf724f.jpg'>
+        <div class='blockText'>
+            <h2>					知识全面讲解				</h2>
             <ul>
-                <li><a href="#">CSS基础知识</a></li>
-                <li><a href="#">效果与动画</a></li>
-                <li><a href="#">工具与工程化</a></li>
+                <li>-- 核心知识全覆盖</li>
+                <li>-- 核心知识全覆盖</li>
+                <li>-- 核心知识全覆盖</li>
             </ul>
-            <div class="headerMain">
-                <h1>全面深入讲解CSS</h1>
+        </div>
+    </div>
+    <div class='block block2'>
+        <div class='blockText'>
+            <h2>						知识全面讲解					</h2>
+            <ul>
+                <li>-- 核心知识全覆盖</li>
+                <li>-- 核心知识全覆盖</li>
+                <li>-- 核心知识全覆盖</li>
+            </ul>
+        </div>
+        <img src='https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1534933152802&di=1eba70f26897ff7b53235861fea6f855&imgtype=0&src=http%3A%2F%2Fimgsrc.baidu.com%2Fimgad%2Fpic%2Fitem%2F09fa513d269759ee8feb23e1b9fb43166d22df65.jpg'>
+    </div>
+</section>
+<footer>		@2018Copyright	</footer>
+
+<div class='progress'></div>
+
+<div class='dialogWrapper'>
+    <div class='mask'></div>
+    <div class='dialog'>
+        <div class='title'>
+            登陆
+        </div>
+        <div class='body'>
+            <form>
                 <ul>
-                    <li>2017年末新课</li>
-                    <li>前端看家本领</li>
-                    <li>全面深入地讲解</li>
+                    <li>
+                        <label>用户名：</label>
+                        <input type='text' name='username'>
+                    </li>
+                    <li>
+                        <label>密码：</label>
+                        <input type='password' name='password'>
+                    </li>
+                    <li class='operateDialog'>
+                        <button class='cancelDialog'>取消</button>
+                        <button class='primary'>登陆</button>
+
+                    </li>
                 </ul>
-            </div>
-        </nav>
-    </header>
-    <section class="banner"></section>
-    <section class="main"></section>
-    <footer>TooBug @2018</footer>
+            </form>
+        </div>
+    </div>
+</div>
+<script src="//cdnjs.cloudflare.com/ajax/libs/less.js/3.8.1/less.min.js"></script>
+<script>
+    function showProgress(){
+        document.querySelector('.progress').classList.add('show');
+    }
+
+    function hiddenProgress(){
+        document.querySelector('.progress').classList.remove('show');
+    }
+
+    function showDialog(){
+        document.querySelector('.dialogWrapper').classList.add('show');
+    }
+
+    function hiddenDialog(){
+        document.querySelector('.dialogWrapper').classList.remove('show');
+    }
+
+    document.querySelector('#login').addEventListener('click', function (e){
+
+        showProgress();
+        setTimeout(function (){
+            hiddenProgress();
+            showDialog();
+        },1000);
+        e.preventDefault();
+
+    });
+
+    document.querySelector('.cancelDialog').addEventListener('click', function (e){
+        e.preventDefault();
+        hiddenDialog();
+    })
+</script>
 </body>
 </html>

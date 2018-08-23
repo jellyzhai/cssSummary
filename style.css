@@ -1,11 +1,313 @@
 * {
     margin: 0;
-    padding: 0;
+    padding: 0
 }
+
+body {
+    background: #fff
+}
+
+
 ul {
-    list-style: none;
+    list-style: none
 }
+
+@keyframes fadeIn {
+    from {
+        transform: translateY(100px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.fadeIn {
+    transform: translateY(100px);
+    opacity: 0;
+    animation: fadeIn 1s;
+    animation-fill-mode: forwards;
+}
+
+.fadeInDelay {
+    animation-delay: 1s;
+}
+
 header {
-    background: linear-gradient(to bottom,#3a2cac,#631d9f);
+    background: linear-gradient(to bottom, #3a2cac, #631d9f);
     height: 280px;
+    padding: 20px;
+}
+
+header nav {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+header nav a {
+    color: #f0f0f0;
+    text-decoration: none;
+}
+
+header nav a:hover {
+    color: #f90;
+}
+
+header nav .user {
+    float: right;
+}
+
+header nav ul li {
+    display: inline-block;
+    padding-right: 40px;
+}
+
+header .headerMain {
+    width: 730px;
+    color: #f0f0f0;
+    margin: 50px auto;
+}
+
+header .headerMain .introduction {
+    float: right;
+}
+
+header .headerMain h1 {
+    line-height: 70px;
+}
+
+.banner {
+    width: 690px;
+    padding: 20px;
+    background: #f0f0f0;
+    margin: 0 auto;
+    margin-top: -105px;
+    box-shadow: 0 0 8px rgba(0,0,0,.3);
+}
+
+.banner ul {
+    font-size: 0;
+    text-align: center;
+}
+
+.banner ul li {
+    display: inline-block;
+    /*background: red;*/
+    width: 180px;
+    height: 160px;
+    text-align: center;
+    font-size: 14px;
+}
+
+.banner ul li .featrue {
+    background: ORANGE;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin: 20px auto;
+}
+
+.main {
+    width: 720px;
+    margin: 100px auto;
+
+}
+
+.main .block {
+    margin-bottom: 100px;
+    margin-left: -20px;
+}
+
+.main .block .blockText {
+    float: left;
+    line-height: 50px;
+    font-size: 24px;
+    color: #999;
+    margin-left: 20px;
+}
+
+.main .block img {
+    width: 440px;
+    height: 235px;
+    float: left;
+    margin-left: 20px;
+}
+
+.main .block::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.main .block h2 {
+    font-family: '΢???ź?';
+}
+
+footer {
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    font-size: 12px;
+    width: 100%
+}
+
+footer .footerContent {
+    /*background: red;
+    width: 1000px;
+    margin: 0 auto;*/
+}
+
+@keyframes rolling {
+    from {
+        background-position: 0 0;
+    }
+    to {
+        background-position: 30px 0;
+    }
+    /*???????*/
+    /*to {
+    background-position: -30px 0;
+    }*/
+}
+
+.progress {
+    position: absolute;
+    width: 280px;
+    height: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 22px;
+    background: linear-gradient(135deg, red 0%, red 33%,orange 33%, orange 66%, red 66%, red 100%);
+    background-size: 30px 15px;
+    /*background-repeat: no-repeat;*/
+    border-radius: 15px;
+    border: 1px solid #999;
+    animation: rolling .6s linear infinite;
+    display: none;
+}
+
+
+.dialogWrapper {
+    position: fixed;
+    left:0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    /*父容器看3D视角有多远*/
+    perspective: 500px;
+}
+
+
+/*要在隐藏的样式后面 才能覆盖之前的隐藏 显示元素*/
+.show {
+    display: block;
+}
+
+@keyframes transition {
+    from {
+        background: rgba(0,0,0,0);
+    }
+    to {
+        background: rgba(0,0,0,.3);
+    }
+}
+
+.dialogWrapper .mask {
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.3);
+
+}
+/*要给显示的 对话容器的 遮罩元素添加动画，如果直接给.mask添加动画，
+则动画效果会在页面显示的时候执行，所以在对话容器显示的时候 动画就执行过了*/
+.dialogWrapper.show .mask  {
+    animation: transition .6s;
+    /*animation-fill-mode: forwards;*/
+}
+
+.dialogWrapper .dialog {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 500px;
+    height: 300px;
+    background: #f0f0f0;
+    transform: translate(-50%,-50%);
+    transform-style: preserve-3d;
+}
+
+/* 给显示后的元素 再加动画，2个class在一块 表示2个class里所有属性同时生效的元素状态 */
+.dialogWrapper.show .dialog {
+    transform-origin: 50% 50%;
+    animation: slideIn .6s;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translate(-50%,-50%) rotateX(-90deg);
+    }
+    to {
+        transform: translate(-50%,-50%) rotateX(0deg);
+    }
+}
+
+.dialogWrapper .dialog .title {
+    height: 50px;
+    line-height: 50px;
+    padding: 0 30px;
+    border: 1px solid #f0f0f0;
+    font-size: 20px;
+}
+
+.dialogWrapper .dialog .body {
+    padding: 30px 80px;
+}
+
+.dialogWrapper .dialog .body li {
+    line-height: 50px;
+    font-size: 20px;
+}
+
+.dialogWrapper .dialog .body li label {
+    display: inline-block;
+    width: 100px;
+}
+.dialogWrapper .dialog .body li input {
+    font-size: 20px;
+    width: 230px;
+    border:0 none;
+    border-bottom: 1px solid #ccc;
+}
+
+.dialogWrapper .dialog .body li input:focus {
+    outline: 0 none;
+}
+
+.dialogWrapper .dialog .body li button {
+    width:140px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 20px;
+    background: #fff;
+    border: 1px solid #999;
+    letter-spacing: 1rem;
+    text-indent: 1rem;
+    cursor: pointer;
+    margin-right: 50px;
+}
+
+.dialogWrapper .dialog .body li .primary {
+    background: #4990e2;
+    border-color: #4990e2;
+}
+
+
+.dialogWrapper .dialog .body li.operateDialog {
+    margin-top: 30px;
+}
+
+.dialogWrapper .dialog .body li button:last-child {
+    margin-right: 0;
 }
